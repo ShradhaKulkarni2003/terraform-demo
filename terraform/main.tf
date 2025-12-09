@@ -54,7 +54,7 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_instance" "web_server" {
-  ami           = "ami-08970fb2d4b4c5dc0"   # Ubuntu 22.04 us-west-2
+  ami           = "ami-0a0e5d9c7acc336f1"   # Ubuntu 22.04 us-west-2
   instance_type = var.instance_type
 
   key_name = aws_key_pair.generated_key.key_name
