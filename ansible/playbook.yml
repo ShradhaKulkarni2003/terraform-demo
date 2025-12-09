@@ -1,0 +1,26 @@
+---
+- name: Configure Web Server
+  hosts: web
+  become: yes
+
+  tasks:
+
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    - name: Install Java
+      apt:
+        name: openjdk-17-jdk
+        state: present
+
+    - name: Install Tomcat10
+      apt:
+        name: tomcat10
+        state: present
+
+    - name: Start Tomcat
+      service:
+        name: tomcat10
+        state: started
+        enabled: yes
