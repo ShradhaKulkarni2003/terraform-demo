@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-west-2"
+}
+
 resource "tls_private_key" "ssh_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
